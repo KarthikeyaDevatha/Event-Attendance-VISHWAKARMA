@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🚀 Starting Lyra Event Attendance System..."
+echo "🚀 Starting Vishwakarma V1 Event Attendance System..."
 
 # Function to kill background processes on exit
 cleanup() {
@@ -29,6 +29,6 @@ cd ..
 echo "✅ System is ONLINE!"
 echo "   - Web App: http://localhost:5174"
 echo "   - API Docs: http://localhost:8000/docs"
-echo "   - Local Scanner: Run 'python sota_scanner.py'"
+echo "   - Local Scanner: Run 'python vishwakarma_v1_scanner.py'"
 
 wait
