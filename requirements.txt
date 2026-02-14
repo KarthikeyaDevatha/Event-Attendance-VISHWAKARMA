@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+sqlalchemy
+requests
+opencv-python-headless
+zxing-cpp
+pyzbar
+numpy
+jinja2
+python-multipart
+# Add any other dependencies here
