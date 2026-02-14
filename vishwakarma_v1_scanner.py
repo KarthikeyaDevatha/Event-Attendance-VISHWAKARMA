@@ -13,7 +13,7 @@ try:
 except ImportError:
     PYZBAR_AVAILABLE = False
 
-# SOTA CONFIGURATION
+# Vishwakarma V1 CONFIGURATION
 API_URL = "http://localhost:8000/api/scan"
 EVENT_ID = 1
 
@@ -61,7 +61,7 @@ class VideoStream:
         self.stream.release()
 
 def preprocess_frame(frame):
-    """SOTA Preprocessing Pipeline."""
+    """Vishwakarma V1 Preprocessing Pipeline."""
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     
     # Contrast Limited Adaptive Histogram Equalization (CLAHE)
@@ -71,7 +71,7 @@ def preprocess_frame(frame):
     
     return enhanced
 
-def sota_decode(frame, enhanced_frame):
+def vishwakarma_v1_decode(frame, enhanced_frame):
     """Hybrid Decoding Stack: ZXing-CPP -> PyZbar -> OpenCV"""
     results = []
     
@@ -123,13 +123,13 @@ def sota_decode(frame, enhanced_frame):
     return results
 
 def main():
-    parser = argparse.ArgumentParser(description="Lyra SOTA QR Scanner")
+    parser = argparse.ArgumentParser(description="Vishwakarma V1 QR Scanner")
     parser.add_argument("--camera", type=int, default=0, help="Camera ID")
     parser.add_argument("--event", type=int, default=1, help="Event ID")
     parser.add_argument("--mirror", action="store_true", help="Start mirrored")
     args = parser.parse_args()
 
-    print(f"🚀 Launching Lyra SOTA Scanner...")
+    print(f"🚀 Launching Vishwakarma V1 Scanner...")
     print(f"🔹 Primary Engine: ZXing-CPP")
     print(f"🔹 Fallback Engine: PyZbar")
     print(f"🔹 Preprocessing: CLAHE")
@@ -151,7 +151,7 @@ def main():
 
         # Pipeline
         enhanced = preprocess_frame(frame)
-        results = sota_decode(frame, enhanced)
+        results = vishwakarma_v1_decode(frame, enhanced)
 
         for res in results:
             data = res['data'].strip()
@@ -181,7 +181,7 @@ def main():
                 # Visual Flash
                 cv2.rectangle(frame, (0,0), (frame.shape[1], frame.shape[0]), (0,255,0), 10)
 
-        cv2.imshow("Lyra SOTA Scanner", frame)
+        cv2.imshow("Vishwakarma V1 Scanner", frame)
         cv2.imshow("Computer Vision View (CLAHE)", enhanced)
 
         key = cv2.waitKey(1) & 0xFF

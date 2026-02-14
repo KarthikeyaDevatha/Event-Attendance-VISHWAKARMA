@@ -1,4 +1,4 @@
-# Lyra Event Attendance System (SOTA Edition)
+# Vishwakarma V1 Event Attendance System
 
 State-of-the-Art QR Attendance System with Hybrid Vision Stack (ZXing-CPP + HTML5-WASM).
 
@@ -14,6 +14,7 @@ State-of-the-Art QR Attendance System with Hybrid Vision Stack (ZXing-CPP + HTML
 - **Enabled Event Deletion**: Added the missing backend `DELETE` endpoint and a custom UI confirmation to prevent accidental deletions.
 - **Scanner Stability**: Optimized the scanner to prevent camera re-initialization during processing, ensuring a smooth scanning loop.
 - **Error Boundaries**: Added React Error Boundaries to catch sub-component failures and maintain application uptime.
+- **Rebranding**: Successfully migrated the system to the **Vishwakarma V1** suite.
 
 ## 🛠 Tech Stack
 - **Frontend**: React, Vite, `html5-qrcode`
@@ -52,8 +53,8 @@ uvicorn server_python.main:app --reload --host 0.0.0.0 --port 8000
 # Terminal 2 (Frontend)
 cd client && npm run dev
 
-# Terminal 3 (SOTA Local Scanner - Optional)
-python sota_scanner.py --camera 0 --event 1
+# Terminal 3 (Local Scanner - Optional)
+python vishwakarma_v1_scanner.py --camera 0 --event 1
 ```
 
 ## 📂 Project Structure
@@ -65,7 +66,7 @@ python sota_scanner.py --camera 0 --event 1
   - `src/components/`: Reusable UI elements (ErrorBoundary, QrScanner, Layout)
   - `src/pages/`: Main views (Dashboard, Scanner, Login, Students)
   - `src/api.js`: Axios configuration with interceptors
-- `sota_scanner.py`: High-Performance Python OpenCV Scanner
+- `vishwakarma_v1_scanner.py`: High-Performance Python OpenCV Scanner
 - `seed.py`: Initial data population script
 - `start.sh`: Universal startup script for both stacks
 

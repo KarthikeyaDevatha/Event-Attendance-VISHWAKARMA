@@ -90,7 +90,7 @@ export default function Scanner() {
     return 'result-absent';
   };
 
-  // Lyra Phase 3: USB Scanner (Keyboard Wedge) Listener
+  // Vishwakarma V1 Phase 3: USB Scanner (Keyboard Wedge) Listener
   useEffect(() => {
     let buffer = "";
     let lastKeyTime = 0;

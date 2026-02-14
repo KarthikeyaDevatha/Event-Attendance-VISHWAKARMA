@@ -12,7 +12,7 @@ def scan_qr(request: schemas.ScanRequest, db: Session = Depends(database.get_db)
     if not request.roll_no or not request.event_id:
         raise HTTPException(status_code=400, detail="roll_no and event_id are required")
     
-    # Lyra Mode: Strict String Ingestion (No transformations)
+    # Vishwakarma V1 Mode: Strict String Ingestion (No transformations)
     clean_roll_no = request.roll_no.strip().upper() 
     
     # 2. Check Event
